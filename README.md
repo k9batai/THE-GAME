@@ -1,24 +1,30 @@
-# README
+# THE GAME
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+自分のやっているゲームのレビューを投稿できる、気になっているゲームのレビューを閲覧できるレビューサイトです。
 
-Things you may want to cover:
+### テーマを選んだ理由
+気になるゲームがあるけど面白いかな？と購入に不安の方の後押しをする
+自分のオススメするゲームを他の人に共有したいと思いこのテーマを選びました。
+またe-スポーツも最近話題になっているため多くに方に役に立つと思い選びました。
 
-* Ruby version
+### ターゲットユーザ
+- 10~20代のゲーム好きの方
+- 人気商品を探している方
+- ゲーム配信者
 
-* System dependencies
+### 主な利用シーン
+- 気になっているゲームの評判が知りたい時
+- 他の人に自分のおすすめのゲームを紹介したい時
+- どんなゲームを買えばいいか迷ってる時
 
-* Configuration
+## 設計書
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
