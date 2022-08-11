@@ -1,11 +1,12 @@
 class Public::GameCommentsController < ApplicationController
 
   def create
-    game = Game.find(params[:game_id])
-    game_comment = current_end_user.game_comments.new(game_comment_params)
-    game_comment.game_id = game.id
-    game_comment.save
-    redirect_to request.referer
+    @game = Game.find(params[:game_id])
+    @game_comment = @game.game_comments.new(game_comment_params)
+    @game_comment.end_user_id = current_end_user.id
+    if @game_comment.save
+      redirect_to request.referer
+    end
   end
 
   def destroy

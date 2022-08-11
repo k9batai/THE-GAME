@@ -2,17 +2,19 @@
   <div class='row mx-auto'>
     <h2>ゲームレビュー</h2>
     <div class = 'col-12'>
-      game
+      <h3>ゲーム名</h3>
     </div>
     <%= @game.title %>
       レビュー内容
       <%= @game.introduction %>
   </div>
-    <table>
-    <tbody>
-      
-    </tbody>
-    </table>
+ <% @game_comments.each do |comment| %>
+      <tr>
+        <td><%= comment.end_user.name %></td>
+        <td><%= comment.comment %></td>
+        <td><%= link_to "削除", game_game_comment_path(@game, comment), method: :delete %></td>
+      </tr>
+    <% end %>
   <div>
     <%= form_with model: [@game, @game_comment] do |f| %>
       <%= f.text_area :comment, rows: '5', class: "w-100" %> <br>

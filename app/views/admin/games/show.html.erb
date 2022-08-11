@@ -1,0 +1,12 @@
+<div class='container'>
+  <div class='row mx-auto'>
+    <h2>ゲームレビュー</h2>
+    <div class = 'col-12'>
+      <h3>ゲーム名</h3>
+    </div>
+    <%= @game.title %>
+      レビュー内容
+      <%= @game.introduction %>
+  </div>
+  <%= link_to "削除する", admin_game_path(@game), method: :delete %>
+</div>
