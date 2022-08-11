@@ -1,0 +1,20 @@
+<div class = "container">
+<table class = "table table-hover">
+  <thead>
+    <tr>
+      <th>投稿者</th>
+      <th>ゲーム名</th>
+      <th>カテゴリー</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+    <tr>
+      <td></td>
+      <td><%= link_to game.title, game_path(game.id) %></td>
+      <td><%= link_to game.category,search_game_path(keyword: game.category) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
