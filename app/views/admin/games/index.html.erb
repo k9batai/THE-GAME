@@ -12,7 +12,7 @@
     <tr>
       <td><%= game.end_user.name %></td>
       <td><%= link_to game.title, admin_game_path(game.id) %></td>
-      <td><%= link_to game.category,search_game_path(keyword: game.category) %></td>
+      <td><%= game.category %></td>
     </tr>
     <% end %>
   </tbody>

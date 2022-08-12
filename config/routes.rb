@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"
   }
+  
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
 
 # 会員側のルーティング設定
   scope module: :public do
@@ -27,7 +31,6 @@ Rails.application.routes.draw do
   resources :games do
     resources :game_comments, only: [:create, :destroy]
   end
-
   end
 
 # 管理者側のルーティング設定

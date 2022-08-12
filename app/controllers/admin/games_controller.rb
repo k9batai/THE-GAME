@@ -9,8 +9,8 @@ class Admin::GamesController < ApplicationController
   end
 
   def destroy
-    @game=Game.find(params[:id])
-    @game.destroy
+    game=Game.find(params[:id])
+    game.destroy
     redirect_to admin_games_path
   end
 
