@@ -18,3 +18,18 @@
   </tbody>
 </table>
 </div>
+
+<% @games.each do |game| %>
+<div class="card" style="width: 20rem;">
+  <div class="card-header">
+    投稿者/<%= game.end_user.name %>
+  </div>
+  <div class="card-body">
+    ゲーム名/<%= link_to game.title, game_path(game.id) %>
+  </div>
+  <div class="card-footer">
+    カテゴリー/
+    <%= link_to game.category,search_game_path(keyword: game.category) %>
+  </div>
+</div>
+<% end %>

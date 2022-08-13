@@ -14,12 +14,16 @@ Rails.application.routes.draw do
   }
 
 
+
 # 会員側のルーティング設定
   scope module: :public do
   root to: "homes#top"
   get '/about' => 'homes#about', as: 'about'
   get "search_game" => "games#search_game"
-  post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+
+  devise_scope :end_user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
 
   get '/mypage' => 'end_users#show'
   get '/mypage/edit' => 'end_users#edit'
