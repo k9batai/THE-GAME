@@ -19,8 +19,8 @@
 - 他の人に自分のおすすめのゲームを紹介したい時
 - どんなゲームを買えばいいか迷ってる時
 
-## 設計書
-![THE GAME drawio](https://user-images.githubusercontent.com/106644921/184521023-40c6afee-580a-4302-8724-b54be77a6b58.png)
+## ER図
+![THE GAME](https://user-images.githubusercontent.com/106644921/184521160-f7058475-9d71-4fec-8dcb-2d03d5de298f.jpg)
 
 
 ## 開発環境
