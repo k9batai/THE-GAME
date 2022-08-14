@@ -22,6 +22,8 @@ class Public::GamesController < ApplicationController
 
   def index
     @games = Game.all
+    @q = Game.ransack(params[:q])
+    @game = @q.result(distinct: true)
   end
 
   def destroy
@@ -49,12 +51,17 @@ class Public::GamesController < ApplicationController
   def search_game
     @games = Game.search(params[:keyword])
   end
+  
+  def search
+    @results = @q.result.includes(:game)
+  end
 
 
   private
-
+  
   def game_params
     params.require(:game).permit(:title, :introduction, :category)
   end
+  
 
 end

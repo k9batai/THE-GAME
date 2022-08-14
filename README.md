@@ -20,6 +20,7 @@
 - どんなゲームを買えばいいか迷ってる時
 
 ## 設計書
+![THE GAME drawio](https://user-images.githubusercontent.com/106644921/184521023-40c6afee-580a-4302-8724-b54be77a6b58.png)
 
 
 ## 開発環境
