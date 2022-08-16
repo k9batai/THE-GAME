@@ -14,4 +14,15 @@ class Admin::EndUsersController < ApplicationController
     redirect_to admin_end_users_path
   end
 
+  def status
+    end_user = EndUser.find_by(params[:id])
+    if end_user.is_valid == true
+      end_user.update(is_valid: false)
+    else
+      end_user.update(is_valid: true)
+    end
+    redirect_to admin_end_users_path
+  end
+
+
 end

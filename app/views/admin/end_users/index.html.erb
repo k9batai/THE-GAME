@@ -4,6 +4,7 @@
     <tr>
       <th>会員ID</th>
       <th>会員名</th>
+      <th>登録状況</th>
       <th>登録日時</th>
     </tr>
   </thead>
@@ -15,6 +16,7 @@
       <%= user.name %>
       <% end %>
       </td>
+      <td><%= user.is_valid ? "有効" : "退会" %></td>
       <td><%= user.created_at.strftime('%Y/%m/%d %H:%M') %></td>
     </tr>
     <% end %>

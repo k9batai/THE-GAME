@@ -6,6 +6,7 @@ class Admin::GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @game_comments = @game.game_comments
   end
 
   def destroy

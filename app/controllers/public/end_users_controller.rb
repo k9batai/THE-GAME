@@ -6,7 +6,33 @@ class Public::EndUsersController < ApplicationController
     @game = @end_user.games
   end
 
+  def edit
+    @end_user = current_end_user
+  end
+  
+  def update
+    end_user = current_end_user
+    if end_user.update(end_user_params)
+      redirect_to mypage_path
+    else
+      render :edit
+    end
+  end
+  
+  def withdraw
+    @end_user = current_end_user
+    # is_deletedカラムをtrueに変更することにより削除フラグを立てる
+    @end_user.update(is_valid: false)
+    reset_session
+    redirect_to root_path
+  end
+
   private
+  
+  def end_user_params
+    params.require(:end_user).permit(:name, :email)
+  end
+
 
   def ensure_guest_user
     @end_user = current_end_user

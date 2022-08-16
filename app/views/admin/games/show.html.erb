@@ -1,12 +1,33 @@
 <div class='container'>
-  <div class='row mx-auto'>
-    <h2>ゲームレビュー</h2>
-    <div class = 'col-12'>
-      <h3>ゲーム名</h3>
+  <table class="table table-bordered mt-3">
+  <thead>
+    <tr>
+      <th>ゲーム名</th>
+      <th>カテゴリー</th>
+      <th>投稿者</th>
+      <th>レビュー内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @game.title %></td>
+      <td><%= @game.category %></td>
+      <td><%= @game.end_user.name %></td>
+      <td><%= @game.introduction %></td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to "投稿を削除する", admin_game_path(@game), method: :delete, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %>
+
+<% @game_comments.each do |comment| %>
+  <div class="media my-5">
+    <%= comment.end_user.name %>
+    <div class="media-body">
+      <h5 class="mt-0">コメント</h5>
+      <%= comment.comment %>
+      <%= link_to "削除", game_game_comment_path(@game, comment), method: :delete %>
     </div>
-    <%= @game.title %>
-      レビュー内容
-      <%= @game.introduction %>
   </div>
-  <%= link_to "削除する", admin_game_path(@game), method: :delete %>
+<% end %>
 </div>
+

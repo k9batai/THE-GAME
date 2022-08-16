@@ -4,8 +4,10 @@ class EndUser < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :games
+  has_many :games, dependent: :destroy
   has_many :game_comments, dependent: :destroy
+
+  validates :name, presence: true
 
   def self.guest
     find_or_create_by!(name: 'ゲストユーザー' ,email: 'guest_user@example.com') do |user|

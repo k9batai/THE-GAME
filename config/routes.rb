@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get '/mypage' => 'end_users#show'
   get '/mypage/edit' => 'end_users#edit'
   patch '/mypage' => 'end_users#update'
+  patch '/mypage/withdraw' => 'end_users#withdraw', as: 'withdraw'
 
   resources :games do
     resources :game_comments, only: [:create, :destroy]
@@ -38,7 +39,9 @@ Rails.application.routes.draw do
   namespace :admin do
   root to: "homes#top"
 
-  resources :end_users, only: [:index, :show, :destroy]
+  resources :end_users, only: [:index, :show, :destroy] do
+    patch '/status' => 'end_users#status', as: 'status'
+  end
   resources :games, only: [:index, :show, :destroy]
   end
 end

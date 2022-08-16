@@ -1,15 +1,20 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-3'>
-      <h2>会員</h2>
+    <div class='col-md-6'>
+      <h2>会員情報</h2>
       <table class='table'>
         <tr>
       	  <th>名前</th>
       	  <th><%= @end_user.name %></th>
         </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <th><%= @end_user.email %></th>
+        </tr>
       </table>
       <h2 class="mt-3">
-        <%= link_to 'アカウントを削除する', admin_end_user_path(@end_user), method: :delete, "data-confirm" => "本当に削除しますか？" , class: "btn btn-danger" %></h2>
+        <%= link_to 'アカウントを停止する', admin_end_user_status_path(@end_user.id), method: :patch, "data-confirm" => "本当に停止しますか？" , class: "btn btn-danger" %>
+      </h2>
     </div>
   </div>
 </div>
