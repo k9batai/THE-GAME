@@ -26,6 +26,7 @@
   <% end %>
 <% end %>
   <%= form_with model: [@game, @game_comment] do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
     <%= f.text_area :comment, rows: 5, placeholder: 'コメントを入力', class: 'form-control' %> <br>
     <%= f.submit "コメントする", class: 'btn btn-success' %>
   <% end %>
