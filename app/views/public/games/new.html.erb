@@ -1,8 +1,8 @@
 <div class = "container">
 <h2 class = "text-center mt-2">投稿フォーム</h2>
 <%= form_with model:@game,local:true do |f| %>
-<%= render 'layouts/error_messages', model: f.object %>
   <div class="form-group col-6 mx-auto ">
+    <%= render 'layouts/error_messages', model: f.object %>
     <%= f.text_field :title, placeholder: 'タイトル', class: 'form-control game_title' %>
   </div>
   <div class="form-group col-6 mx-auto">

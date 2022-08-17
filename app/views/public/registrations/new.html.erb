@@ -1,14 +1,13 @@
 <div class="box1">
   <div class="box-inner">
     <%= form_with model: @end_user, url: end_user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+     <%= render 'layouts/error_messages', model: f.object %>
     <h1>新規登録</h1>
     <div class="box-name">
       <i class="fa-solid fa-user"></i>
       <%= f.label :name, "名前" %><br />
       <%= f.text_field :name, placeholder: 'お名前', autofocus: true %>
     </div>
-
     <div class="box-email">
       <i class="fa-solid fa-envelope"></i>
       <%= f.label :email, "Eメール" %><br />
