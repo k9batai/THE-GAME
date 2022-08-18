@@ -7,6 +7,9 @@
   <% end %>
   <div class = 'row'>
   <% @games.each do |game| %>
+    <% if game.end_user.is_valid == false %>
+      <% next %>
+    <% end %>
     <div class = 'col-4'>
       <div class="card mt-3">
         <h3 class="card-header"><%= game.title %></h3>

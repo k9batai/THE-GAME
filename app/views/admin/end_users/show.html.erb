@@ -13,7 +13,11 @@
         </tr>
       </table>
       <h2 class="mt-3">
-        <%= link_to 'アカウントを停止する', admin_end_user_status_path(@end_user.id), method: :patch, "data-confirm" => "本当に停止しますか？" , class: "btn btn-danger" %>
+        <% if @end_user.is_valid == true %>
+          <%= link_to 'アカウントを停止する', admin_end_user_status_path(@end_user.id), method: :patch, "data-confirm" => "本当に停止しますか？" , class: "btn btn-danger" %>
+        <% else %>
+          <%= link_to 'アカウントを再開させる', admin_end_user_status_path(@end_user.id), method: :patch, "data-confirm" => "本当に再開させますか？" , class: "btn btn-primary" %>
+        <% end %>
       </h2>
     </div>
   </div>

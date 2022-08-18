@@ -17,17 +17,13 @@
     </tr>
   </tbody>
 </table>
-<%= link_to "投稿を削除する", admin_game_path(@game), method: :delete, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %>
+<%= link_to "投稿を削除する", admin_game_path(@game), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
 
+<h4 class = "col-2 mt-3 border rounded-pill">コメント一覧</h4>
 <% @game_comments.each do |comment| %>
-  <div class="media my-5">
-    <%= comment.end_user.name %>
-    <div class="media-body">
-      <h5 class="mt-0">コメント</h5>
-      <%= comment.comment %>
-      <%= link_to "削除", game_game_comment_path(@game, comment), method: :delete %>
-    </div>
-  </div>
+  <p><%= comment.end_user.name %>さん</p>
+  <p class = "border-bottom">コメント:<%= comment.comment %></p>
+  <%= link_to "コメントを削除する", admin_game_game_comment_path(@game,comment), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-sm btn-danger" %>
 <% end %>
 </div>
 

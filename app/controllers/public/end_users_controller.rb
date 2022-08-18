@@ -3,7 +3,7 @@ class Public::EndUsersController < ApplicationController
 
   def show
     @end_user = current_end_user
-    @game = @end_user.games
+    @game = @end_user.games.page(params[:page]).per(3)
   end
 
   def edit

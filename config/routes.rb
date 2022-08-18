@@ -42,6 +42,8 @@ Rails.application.routes.draw do
   resources :end_users, only: [:index, :show, :destroy] do
     patch '/status' => 'end_users#status', as: 'status'
   end
-  resources :games, only: [:index, :show, :destroy]
+  resources :games, only: [:index, :show, :destroy] do
+    resources :game_comments, only: [:destroy]
+  end
   end
 end
