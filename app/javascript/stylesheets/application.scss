@@ -15,6 +15,14 @@
   border: 1px #ddd solid;
 }
 
+.box2 {
+  width: 350px;
+  height: 500px;
+  margin: 60px auto 0;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+}
+
 .box-inner {
   padding: 20px 26px;
 }
@@ -121,4 +129,18 @@ h1 {
 
 .box-newusr a:hover {
   background: #e7e9ec;
+}
+
+.flash-notifications {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+
+  .notice {
+    background-color: #ADD8E6;
+  }
+
+  .alert {
+    background-color: #FF4500;
+  }
 }

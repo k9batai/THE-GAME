@@ -18,7 +18,7 @@
       <i class="fa-solid fa-key"></i>
       <%= f.label :password, "パスワード" %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> 文字以上で設定して下さい)</em>
       <% end %><br />
       <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "new-password" %>
     </div>

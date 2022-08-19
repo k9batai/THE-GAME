@@ -1,7 +1,7 @@
 class Admin::GamesController < ApplicationController
 
   def index
-    @games = Game.all
+    @games = Game.page(params[:page]).per(10)
   end
 
   def show
@@ -12,7 +12,7 @@ class Admin::GamesController < ApplicationController
   def destroy
     game=Game.find(params[:id])
     game.destroy
-    redirect_to admin_games_path
+    redirect_to admin_games_path, notice: '投稿を削除しました。'
   end
 
 end

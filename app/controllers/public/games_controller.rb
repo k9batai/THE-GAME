@@ -8,7 +8,7 @@ class Public::GamesController < ApplicationController
     @game = Game.new(game_params)
     @game.end_user_id = current_end_user.id
     if @game.save
-      redirect_to game_path(@game)
+      redirect_to game_path(@game), notice: '投稿に成功しました。'
     else
       render 'new'
     end
@@ -41,7 +41,7 @@ class Public::GamesController < ApplicationController
   def update
     @game=Game.find(params[:id])
     if @game.update(game_params)
-      redirect_to mypage_path(current_end_user)
+      redirect_to mypage_path(current_end_user), notice: '更新しました。'
     else
       render :edit
     end

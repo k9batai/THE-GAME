@@ -5,7 +5,7 @@ class Public::GameCommentsController < ApplicationController
     @game_comment = @game.game_comments.new(game_comment_params)
     @game_comment.end_user_id = current_end_user.id
     if @game_comment.save
-      redirect_to game_path(@game)
+      redirect_to game_path(@game), notice: 'コメントしました。'
     else
       @game = Game.find_by(params[:id])
       @game_comments = @game.game_comments
@@ -16,7 +16,7 @@ class Public::GameCommentsController < ApplicationController
   def destroy
     game = Game.find_by(params[:id])
     GameComment.find_by(id: params[:id], game_id: params[:game_id]).destroy
-    redirect_to game_path(game)
+    redirect_to game_path(game), notice: 'コメントを削除しました。'
   end
 
   private

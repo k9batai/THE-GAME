@@ -6,3 +6,18 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
+
+  activerecord:
+   attributes:
+     end_user:
+       name: 名前
+       email: メールアドレス
+       password: パスワード
+
+     game:
+      title: タイトル
+      introduction: レビュー内容
+      category: カテゴリー
+
+     game_comment:
+      comment: コメント

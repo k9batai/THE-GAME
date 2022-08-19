@@ -3,7 +3,7 @@ class Public::EndUsersController < ApplicationController
 
   def show
     @end_user = current_end_user
-    @game = @end_user.games.page(params[:page]).per(3)
+    @game = @end_user.games.page(params[:page]).per(5)
   end
 
   def edit
@@ -13,7 +13,7 @@ class Public::EndUsersController < ApplicationController
   def update
     end_user = current_end_user
     if end_user.update(end_user_params)
-      redirect_to mypage_path
+      redirect_to mypage_path, notice: 'プロフィールが更新されました。'
     else
       @end_user = current_end_user
       render :edit
@@ -22,10 +22,9 @@ class Public::EndUsersController < ApplicationController
 
   def withdraw
     @end_user = current_end_user
-    # is_deletedカラムをtrueに変更することにより削除フラグを立てる
     @end_user.update(is_valid: false)
     reset_session
-    redirect_to root_path
+    redirect_to root_path, alert: '退会しました。'
   end
 
   private
@@ -38,7 +37,7 @@ class Public::EndUsersController < ApplicationController
   def ensure_guest_user
     @end_user = current_end_user
     if @end_user.name == "ゲストユーザー"
-      redirect_to mypage_path(current_end_user) , notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
+      redirect_to mypage_path(current_end_user), notice: 'ゲストユーザーとしてログインしました。'
     end
   end
 
