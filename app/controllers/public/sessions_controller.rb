@@ -26,7 +26,7 @@ class Public::SessionsController < Devise::SessionsController
     @end_user = EndUser.find_by(email: params[:end_user][:email])
     if @end_user
       if @end_user.valid_password?(params[:end_user][:password]) && !@end_user.is_valid
-        redirect_to new_end_user_registration_path
+        redirect_to new_end_user_registration_path, alert: "このユーザーは退会済みです。新しく新規登録を行なって下さい。"
       end
     end
   end
