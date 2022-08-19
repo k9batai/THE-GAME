@@ -6,6 +6,7 @@ class Admin::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
+    @games = @end_user.games
   end
 
   def destroy

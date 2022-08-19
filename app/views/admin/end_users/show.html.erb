@@ -1,6 +1,6 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-6'>
+    <div class='col-md-4 mt-5'>
       <h2>会員情報</h2>
       <table class='table'>
         <tr>
@@ -19,6 +19,25 @@
           <%= link_to 'アカウントを再開させる', admin_end_user_status_path(@end_user.id), method: :patch, "data-confirm" => "本当に再開させますか？" , class: "btn btn-primary" %>
         <% end %>
       </h2>
+    </div>
+     <div class='col-md-8 mt-5'>
+      <h2>投稿一覧</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ゲーム名</th>
+            <th>カテゴリー</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @games.each do |game| %>
+          <tr>
+            <td><%= link_to game.title, admin_game_path(game) %></td>
+            <td><%= game.category %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
