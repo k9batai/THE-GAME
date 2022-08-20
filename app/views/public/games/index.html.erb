@@ -16,6 +16,15 @@
         <div class="card-body">
           <p class="card-text"><%= game.introduction %></p>
           <p><%= link_to game.category, search_game_path(keyword: game.category) %></p>
+          <% if game.favorited?(current_end_user) %>
+            <%= link_to game_favorites_path(game.id), method: :delete do %>
+              ❤<%= game.favorites.count %>
+            <% end %>
+          <% else %>
+            <%= link_to game_favorites_path(game.id), method: :post do %>
+              ♡<%= game.favorites.count %>
+            <% end %>
+          <% end %>
           <%= link_to 'レビューを見る', game_path(game), class: "btn btn-primary" %>
         </div>
       </div>

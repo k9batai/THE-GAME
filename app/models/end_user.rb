@@ -6,6 +6,7 @@ class EndUser < ApplicationRecord
 
   has_many :games, dependent: :destroy
   has_many :game_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   validates :name, presence: true
 
