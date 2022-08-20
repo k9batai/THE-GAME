@@ -1,32 +1,4 @@
 <div class = "container">
-  <br>
-  <%= search_form_for @q do |f| %>
-    <%= f.label :title, "タイトル検索" %>
-    <%= f.search_field :title_cont, placeholder: "タイトル検索" %>
-    <%= f.submit "検索" %>
-  <% end %>
-  <div class = 'row'>
-  <% @games.each do |game| %>
-    <div class = 'col-4'>
-      <div class="card mt-3">
-        <h3 class="card-header"><%= game.title %></h3>
-        <div class="card-body">
-          <p class="card-text"><%= game.introduction %></p>
-          <p><%= link_to game.category, search_game_path(keyword: game.category) %></p>
-          <% if game.favorited?(current_end_user) %>
-            <%= link_to game_favorites_path(game.id), method: :delete do %>
-              <i class="fa-solid fa-heart heart"></i><%= game.favorites.count %>
-            <% end %>
-          <% else %>
-            <%= link_to game_favorites_path(game.id), method: :post do %>
-              <i class="fa-regular fa-heart"></i><%= game.favorites.count %>
-            <% end %>
-          <% end %>
-          <i class="fa-regular fa-comment-dots"></i><%= game.game_comments.count %>
-          <%= link_to 'レビューを見る', game_path(game), class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-  </div>
+<%= render 'public/games/search', q: @q %>
+<%= render 'public/games/index', games: @games %>
 </div>

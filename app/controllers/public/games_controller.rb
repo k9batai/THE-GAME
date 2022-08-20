@@ -49,7 +49,7 @@ class Public::GamesController < ApplicationController
 
   def search_game
     @q = Game.ransack(params[:q])
-    @games = Game.search(params[:keyword])
+    @games = Game.search(params[:keyword]).page(params[:page]).per(6)
   end
 
 
