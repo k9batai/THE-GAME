@@ -48,6 +48,7 @@ class Public::GamesController < ApplicationController
   end
 
   def search_game
+    @q = Game.ransack(params[:q])
     @games = Game.search(params[:keyword])
   end
 

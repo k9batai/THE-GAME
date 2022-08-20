@@ -22,6 +22,8 @@
             <th>カテゴリー</th>
             <th></th>
             <th></th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +31,8 @@
           <tr>
             <td><%= link_to game.title, game_path(game) %></td>
             <td><%= game.category %></td>
+            <td><i class="fa-solid fa-heart heart"></i><%= game.favorites.count %></td>
+            <td><i class="fa-regular fa-comment-dots"><%= game.game_comments.count %></td>
             <% if current_end_user.id == game.end_user.id %>
             <td><%= link_to '編集', edit_game_path(game.id), class: "btn btn-outline-primary" %></td>
             <td><%= link_to '削除', game_path(game.id), class: "btn btn-outline-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
