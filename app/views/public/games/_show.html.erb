@@ -1,0 +1,18 @@
+<table class="table table-bordered mt-3">
+  <thead>
+    <tr>
+      <th>ゲーム名</th>
+      <th>カテゴリー</th>
+      <th>投稿者</th>
+      <th>レビュー内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= game.title %></td>
+      <td><%= game.category %></td>
+      <td><%= game.end_user.name %></td>
+      <td><%= @game.introduction %></td>
+    </tr>
+  </tbody>
+</table>
