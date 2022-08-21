@@ -1,4 +1,4 @@
-<div class='container'>
+<div class='container p-5'>
 <%= render 'public/games/show', game: @game %>
 <%= link_to "投稿を削除する", admin_game_path(@game), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
 
