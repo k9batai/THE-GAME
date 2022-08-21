@@ -1,3 +1,4 @@
+<div class="container pt-5">
 <div class="box1">
   <div class="box-inner">
     <%= form_with model: @end_user, url: end_user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
@@ -33,4 +34,5 @@
       <%= link_to "ログイン", new_end_user_session_path %>
     </div>
   </div>
+</div>
 </div>
