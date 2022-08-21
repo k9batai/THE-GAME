@@ -1,13 +1,14 @@
 <div class='container pt-5'>
 <%= render 'public/games/show', game: @game %>
-<h4 class = "col-2 border rounded-pill">コメント一覧</h4>
+<h4 class = "col-2 border rounded-pill border-success">コメント一覧</h4>
 <% @game_comments.each do |comment| %>
   <p><%= comment.end_user.name %>さん</p>
-  <p class = "border-bottom">コメント:<%= comment.comment %></p>
+  <p class = "border-bottom ">コメント:<%= comment.comment %></p>
   <% if comment.end_user.id == current_end_user.id %>
     <p><%= link_to "コメントを削除する", game_game_comment_path(@game, comment), method: :delete, class: "btn btn-sm btn-danger" %></p>
   <% end %>
 <% end %>
+<%= paginate @game_comments %>
   <%= form_with model: [@game, @game_comment] do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>
     <%= f.text_area :comment, rows: 5, placeholder: 'コメントを入力', class: 'form-control' %> <br>

@@ -17,7 +17,7 @@ class Public::GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @game_comment = GameComment.new
-    @game_comments = @game.game_comments
+    @game_comments = @game.game_comments.page(params[:page]).per(4)
   end
 
   def index

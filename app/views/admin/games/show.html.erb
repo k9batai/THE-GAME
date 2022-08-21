@@ -1,8 +1,8 @@
-<div class='container p-5'>
+<div class='container pt-5'>
 <%= render 'public/games/show', game: @game %>
 <%= link_to "投稿を削除する", admin_game_path(@game), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
 
-<h4 class = "col-2 mt-3 border rounded-pill">コメント一覧</h4>
+<h4 class = "col-2 mt-3 border rounded-pill border-success">コメント一覧</h4>
 <% @game_comments.each do |comment| %>
   <p><%= comment.end_user.name %>さん</p>
   <p class = "border-bottom">コメント:<%= comment.comment %></p>
