@@ -69,3 +69,6 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+gem 'pry-rails'

@@ -4,8 +4,14 @@ class Public::GameCommentsController < ApplicationController
     game = Game.find(params[:game_id])
     game_comment = game.game_comments.new(game_comment_params)
     game_comment.end_user_id = current_end_user.id
-    game_comment.save
-    redirect_to game_path(game), notice: 'コメントしました。'
+    if game_comment.save
+      redirect_to game_path(game), notice: 'コメントしました。'
+    else
+      @game=Game.find(params[:game_id])
+      @game_comment = game_comment
+      @game_comments = @game.game_comments.page(params[:page]).per(4)
+      render 'public/games/show'
+    end
   end
 
   def destroy
