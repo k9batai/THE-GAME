@@ -8,13 +8,13 @@ class EndUser < ApplicationRecord
   has_many :game_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   def self.guest
     find_or_create_by!(name: 'ゲストユーザー' ,email: 'guest_user@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲストユーザー"
     end
-    
+
   end
 end

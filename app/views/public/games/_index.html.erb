@@ -7,7 +7,7 @@
       <div class="card mt-3 border-dark">
         <h3 class="card-header bg-primary text-light"><%= game.title %></h3>
         <div class="card-body">
-          <p class="card-text"><%= game.introduction %></p>
+          <p class="card-text"><%= game.introduction.truncate(35) %></p>
           <p><%= link_to game.category, search_game_path(keyword: game.category) %></p>
           <% if game.favorited?(current_end_user) %>
             <%= link_to game_favorites_path(game.id), method: :delete do %>

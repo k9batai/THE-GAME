@@ -3,9 +3,9 @@ class Game < ApplicationRecord
   has_many :game_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-  validates :title, presence: true
-  validates :introduction, presence: true
-  validates :category, presence: true
+  validates :title, presence: true, length: { maximum: 20 }
+  validates :introduction, presence: true, length: { in: 30..300 }
+  validates :category, presence: true, length: { maximum: 10 }
 
   def self.search(search_word)
     Game.where(['category LIKE ?', "#{search_word}"])
