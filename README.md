@@ -21,6 +21,7 @@
 
 ## ER図
 ![THE GAME](https://user-images.githubusercontent.com/106644921/184521160-f7058475-9d71-4fec-8dcb-2d03d5de298f.jpg)
+- https://docs.google.com/spreadsheets/d/1i4ftCUSWWPR16yFObTHkfBthcgiS4uhg1nEAbY8G9Io/edit?usp=sharing
 
 
 ## 開発環境
