@@ -1,6 +1,8 @@
 # THE GAME
 
 ## サイト概要
+<img width="1496" alt="スクリーンショット 2022-08-23 9 51 15" src="https://user-images.githubusercontent.com/106644921/186044701-75428b38-d00f-4bcc-a5c1-6bd2899b565a.png">
+
 ### サイトテーマ
 自分のやっているゲームのレビューを投稿できる、気になっているゲームのレビューを閲覧できるレビューサイトです。
 
@@ -19,8 +21,9 @@
 - 他の人に自分のおすすめのゲームを紹介したい時
 - どんなゲームを買えばいいか迷ってる時
 
+### 設計書
 ## ER図
-![THE GAME](https://user-images.githubusercontent.com/106644921/184521160-f7058475-9d71-4fec-8dcb-2d03d5de298f.jpg)
+![THE GAME](https://user-images.githubusercontent.com/106644921/186044331-2e3a0bf9-cd25-441f-851d-8f6f1e9878f0.jpg)
 - テーブル定義書(https://docs.google.com/spreadsheets/d/1i4ftCUSWWPR16yFObTHkfBthcgiS4uhg1nEAbY8G9Io/edit?usp=sharing)
 
 
