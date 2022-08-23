@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: "homes#top"
     get '/about' => 'homes#about', as: 'about'
-    get "search_game" => "games#search_game"
   
     devise_scope :end_user do
       post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
@@ -30,6 +29,7 @@ Rails.application.routes.draw do
     patch '/mypage' => 'end_users#update'
     patch '/mypage/withdraw' => 'end_users#withdraw', as: 'withdraw'
   
+    get "search_game" => "games#search_game"
     resources :games do
       resources :game_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]

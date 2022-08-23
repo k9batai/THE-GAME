@@ -25,7 +25,7 @@
 ## ER図
 ![THE GAME](https://user-images.githubusercontent.com/106644921/186044331-2e3a0bf9-cd25-441f-851d-8f6f1e9878f0.jpg)
 - テーブル定義書(https://docs.google.com/spreadsheets/d/1i4ftCUSWWPR16yFObTHkfBthcgiS4uhg1nEAbY8G9Io/edit?usp=sharing)
-
+- アプリケーション詳細設計(https://docs.google.com/spreadsheets/d/1QLabDPO79J6bXKshJZfBPwouW25VMHPy/edit?usp=sharing&ouid=108767797487454711349&rtpof=true&sd=true)
 
 ## 開発環境
 - OS：Linux(CentOS)
@@ -33,3 +33,6 @@
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
+## 使用素材
+- Pixabayサイトよりフリー画像を使用しています。
