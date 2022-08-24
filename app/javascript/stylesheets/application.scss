@@ -149,12 +149,14 @@ h1 {
   color: #FF0099;
 }
 
-html, body, main {
-  height: 100%;
+
+main {
+  height: 1000px;
+  overflow: auto;
 }
 
 main {
-  background-color: #F2F2F2;
+  background-color: #F4F5F7;
 }
 
 footer {
