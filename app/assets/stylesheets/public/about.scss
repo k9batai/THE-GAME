@@ -1,0 +1,18 @@
+.about {
+  background-image: image-url("about.jpg");
+  height: 100%;
+}
+
+.profile {
+  padding: 100px 0 0 200px;
+  font-family: "hannotate tc";
+
+  .title {
+  margin-left: 50px;
+  }
+
+  p {
+  font-size: 19px;
+  margin-top: 20px;
+  }
+}
