@@ -1,25 +1,26 @@
 <div class = "container pt-5">
-<table class = "table table-hover">
-  <thead>
-    <tr>
-      <th>投稿者</th>
-      <th>ゲーム名</th>
-      <th>カテゴリー</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @games.each do |game| %>
-    <tr>
-      <td><%= game.end_user.name %></td>
-      <td><%= link_to game.title, admin_game_path(game.id) %></td>
-      <td><%= game.category %></td>
-      <td><i class="fa-solid fa-heart heart"></i><%= game.favorites.count %></td>
-      <td><i class="fa-regular fa-comment-dots"><%= game.game_comments.count %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  <h2>投稿一覧</h2>  
+  <table class = "table table-hover">
+    <thead>
+      <tr>
+        <th>投稿者</th>
+        <th>ゲーム名</th>
+        <th>カテゴリー</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @games.each do |game| %>
+      <tr>
+        <td><%= game.end_user.name %></td>
+        <td><%= link_to game.title, admin_game_path(game.id) %></td>
+        <td><%= game.category %></td>
+        <td><i class="fa-solid fa-heart heart"></i><%= game.favorites.count %></td>
+        <td><i class="fa-regular fa-comment-dots"><%= game.game_comments.count %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 <%= paginate @games %>
 </div>
