@@ -4,7 +4,7 @@ class Game < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 20 }
-  validates :introduction, presence: true, length: { in: 30..300 }
+  validates :introduction, presence: true, length: { in: 15..300 }
   validates :category, presence: true, length: { maximum: 10 }
 
   def self.search(search_word)

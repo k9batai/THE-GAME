@@ -22,7 +22,7 @@ class Public::GamesController < ApplicationController
 
   def index
     @q = Game.ransack(params[:q])
-    @games = params[:q].present? ? @q.result.page(params[:page]).per(6) : Game.page(params[:page]).per(6)
+    @games = params[:q].present? ? @q.result.page(params[:page]).per(9) : Game.page(params[:page]).per(9)
   end
 
   def destroy
