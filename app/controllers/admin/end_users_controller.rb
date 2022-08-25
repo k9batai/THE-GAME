@@ -16,7 +16,7 @@ class Admin::EndUsersController < ApplicationController
   end
 
   def status
-    end_user = EndUser.find_by(params[:id])
+    end_user = EndUser.find(params[:id])
     if end_user.is_valid == true
       end_user.update(is_valid: false)
     else
