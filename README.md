@@ -1,7 +1,7 @@
 # THE GAME
 
 ## サイト概要
-!(assets/images/top.png)
+<img width="1354" alt="top" src="https://user-images.githubusercontent.com/106644921/186660139-16463833-e375-469b-916f-670373ef003d.png">
 
 ### サイトテーマ
 自分のやっているゲームのレビューを投稿できる、気になっているゲームのレビューを閲覧できるレビューサイトです。
