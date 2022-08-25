@@ -1,7 +1,7 @@
 # THE GAME
 
 ## サイト概要
-<img width="1496" alt="スクリーンショット 2022-08-23 9 51 15" src="https://user-images.githubusercontent.com/106644921/186044701-75428b38-d00f-4bcc-a5c1-6bd2899b565a.png">
+![Top]  (images/top.png)
 
 ### サイトテーマ
 自分のやっているゲームのレビューを投稿できる、気になっているゲームのレビューを閲覧できるレビューサイトです。
