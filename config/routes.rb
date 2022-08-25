@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "homes#top"
 
-    resources :end_users, only: [:index, :show, :destroy] do
+    resources :end_users, only: [:index, :show] do
       patch '/status/:id' => 'end_users#status', as: 'status'
     end
     resources :games, only: [:index, :show, :destroy] do
