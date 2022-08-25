@@ -28,7 +28,7 @@ class Public::GamesController < ApplicationController
   def destroy
     @game=Game.find(params[:id])
     @game.destroy
-    redirect_to mypage_path(current_end_user)
+    redirect_to mypage_path(current_end_user), notice: '投稿を削除しました。'
   end
 
   def edit
