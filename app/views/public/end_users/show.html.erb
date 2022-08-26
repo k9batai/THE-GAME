@@ -13,13 +13,14 @@
         </div>
       </div>
     </div>
-    <div class='col-md-8 mt-5 offset-md-1'>
+    <div class='col-md-9 mt-5'>
       <h2>MyGames</h2>
       <table class="table table-hover mt-5">
         <thead>
           <tr>
             <th>ゲーム名</th>
             <th>カテゴリー</th>
+            <th>評価</th>
             <th></th>
             <th></th>
             <th></th>
@@ -31,6 +32,18 @@
           <tr>
             <td><%= link_to game.title, game_path(game) %></td>
             <td><%= game.category %></td>
+            <td><span id="star-rate<%= game.id %>"></span>
+              <script>
+              $('#star-rate<%= game.id%>').raty({
+                size      : 36,
+                starOff   : '<%= asset_path('star-off.png') %>',
+                starOn    : '<%= asset_path('star-on.png') %>',
+                half      : false,
+                readOnly: true,
+                score: <%= game.star %>,
+              });
+              </script>
+            </td>
             <td><i class="fa-solid fa-heart heart"></i><%= game.favorites.count %></td>
             <td><i class="fa-regular fa-comment-dots"><%= game.game_comments.count %></td>
             <% if current_end_user.id == game.end_user.id %>

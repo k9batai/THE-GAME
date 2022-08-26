@@ -6,7 +6,7 @@ class Admin::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
-    @games = @end_user.games.page(params[:page]).per(5)
+    @games = @end_user.games.page(params[:page]).per(8)
   end
 
   def status
