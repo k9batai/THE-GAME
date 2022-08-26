@@ -18,6 +18,7 @@ ja:
       title: タイトル
       introduction: レビュー内容
       category: カテゴリー
+      star: 評価
 
      game_comment:
       comment: コメント

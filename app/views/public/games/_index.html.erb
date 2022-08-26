@@ -8,6 +8,7 @@
         <h3 class="card-header bg-primary text-light"><%= game.title %></h3>
         <div class="card-body">
           <p class="card-text"><%= game.introduction.truncate(35) %></p>
+          <p>評価 :<%= game.star %>点</p>
           <div id="star-rate<%= game.id %>"></div>
             <script>
               $('#star-rate<%= game.id %>').raty({

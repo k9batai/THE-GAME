@@ -6,6 +6,7 @@ class Game < ApplicationRecord
   validates :title, presence: true, length: { maximum: 20 }
   validates :introduction, presence: true, length: { in: 15..300 }
   validates :category, presence: true, length: { maximum: 10 }
+  validates :star, presence: true
 
   def self.search(search_word)
     Game.where(['category LIKE ?', "#{search_word}"])
