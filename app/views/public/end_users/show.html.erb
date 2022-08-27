@@ -1,60 +1,6 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-3 mt-5'>
-      <h2>MyCharacter</h2>
-      <div class="card mt-5">
-        <i class="fa-regular fa-user fa-3x text-center pt-2"></i>
-        <div class="card-body">
-          <h4 class="card-title"><%= @end_user.name %></h4>
-          <% if @end_user.name != "ゲストユーザー" %>
-            <%= link_to 'プロフィール編集', mypage_edit_path(@end_user), class: "btn btn-sm btn-success" %>
-          <% end %>
-          <%= link_to '投稿する', new_game_path, class: "btn btn-sm btn-success" %>
-        </div>
-      </div>
-    </div>
-    <div class='col-md-9 mt-5'>
-      <h2>MyGames</h2>
-      <table class="table table-hover mt-5">
-        <thead class="thead-light">
-          <tr>
-            <th>ゲーム名</th>
-            <th>カテゴリー</th>
-            <th>評価</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @game.each do |game| %>
-          <tr>
-            <td><%= link_to game.title, game_path(game) %></td>
-            <td><%= game.category %></td>
-            <td><span id="star-rate<%= game.id %>"></span>
-              <script>
-              $('#star-rate<%= game.id%>').raty({
-                size      : 36,
-                starOff   : '<%= asset_path('star-off.png') %>',
-                starOn    : '<%= asset_path('star-on.png') %>',
-                half      : false,
-                readOnly: true,
-                score: <%= game.star %>,
-              });
-              </script>
-            </td>
-            <td><i class="fa-solid fa-heart heart"></i><%= game.favorites.count %></td>
-            <td><i class="fa-regular fa-comment-dots"><%= game.game_comments.count %></td>
-            <% if current_end_user.id == game.end_user.id %>
-            <td><%= link_to '編集', edit_game_path(game.id), class: "btn btn-outline-primary" %></td>
-            <td><%= link_to '削除', game_path(game.id), class: "btn btn-outline-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
-            <% end %>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <%= paginate @game %>
-    </div>
+    <%= render 'public/end_users/info', end_user: @end_user %>
+    <%= render 'public/end_users/show', game: @game %>
   </div>
 </div>

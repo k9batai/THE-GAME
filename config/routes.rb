@@ -13,8 +13,6 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 
-
-
 # 会員側のルーティング設定
   scope module: :public do
     root to: "homes#top"
@@ -47,4 +45,5 @@ Rails.application.routes.draw do
       resources :game_comments, only: [:destroy]
     end
   end
+  
 end

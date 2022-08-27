@@ -1,27 +1,30 @@
 <div class="container pt-5">
+
 <h2>管理者ログイン</h2>
-<div class="box2">
-  <div class="box-inner">
-    <%= form_with model: @admin, url: admin_session_path do |f| %>
-    <h1>ログイン</h1>
-    <div class="box-email">
-      <i class="fa-solid fa-envelope"></i>
-      <%= f.label :email, "Eメール" %><br />
-      <%= f.email_field :email, autofocus: true, placeholder: 'メールアドレス', autocomplete: "email" %>
-    </div>
-    <div class="box-password">
-      <div class="a-row">
-        <div class="column-left">
-          <i class="fa-solid fa-key"></i>
-          <%= f.label :password, "パスワード" %>
-        </div>
+
+  <div class="box2">
+    <div class="box-inner">
+      <%= form_with model: @admin, url: admin_session_path do |f| %>
+      <h1>ログイン</h1>
+      <div class="box-email">
+        <i class="fa-solid fa-envelope"></i>
+        <%= f.label :email, "Eメール" %><br />
+        <%= f.email_field :email, autofocus: true, placeholder: 'メールアドレス', autocomplete: "email" %>
       </div>
-      <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "current-password" %>
+      <div class="box-password">
+        <div class="a-row">
+          <div class="column-left">
+            <i class="fa-solid fa-key"></i>
+            <%= f.label :password, "パスワード" %>
+          </div>
+        </div>
+        <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "current-password" %>
+      </div>
+      <div class="box-login">
+        <%= f.submit "ログイン" %>
+      </div>
+      <% end %>
     </div>
-    <div class="box-login">
-      <%= f.submit "ログイン" %>
-    </div>
-    <% end %>
   </div>
-</div>
+
 </div>
