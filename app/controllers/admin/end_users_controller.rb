@@ -9,6 +9,7 @@ class Admin::EndUsersController < ApplicationController
     @games = @end_user.games.page(params[:page]).per(8)
   end
 
+  #会員登録状況
   def status
     end_user = EndUser.find(params[:id])
     if end_user.is_valid == true
@@ -18,6 +19,5 @@ class Admin::EndUsersController < ApplicationController
     end
     redirect_to admin_end_users_path, notice: '会員情報を更新しました。'
   end
-
 
 end

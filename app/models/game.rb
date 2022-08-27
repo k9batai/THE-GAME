@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
+  
   belongs_to :end_user
   has_many :game_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
@@ -15,4 +16,5 @@ class Game < ApplicationRecord
   def favorited?(end_user)
     favorites.where(end_user_id: end_user.id).exists?
   end
+  
 end

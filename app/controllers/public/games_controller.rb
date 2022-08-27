@@ -17,7 +17,7 @@ class Public::GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @game_comment = GameComment.new
-    @game_comments = @game.game_comments.page(params[:page]).per(4)
+    @game_comments = @game.game_comments.page(params[:page]).per(5)
   end
 
   def index
@@ -26,20 +26,20 @@ class Public::GamesController < ApplicationController
   end
 
   def destroy
-    @game=Game.find(params[:id])
+    @game = Game.find(params[:id])
     @game.destroy
     redirect_to mypage_path(current_end_user), notice: '投稿を削除しました。'
   end
 
   def edit
-    @game=Game.find(params[:id])
-    if @game.end_user.id!=current_end_user.id
+    @game = Game.find(params[:id])
+    if @game.end_user.id != current_end_user.id
        redirect_to mypage_path(current_end_user)
     end
   end
 
   def update
-    @game=Game.find(params[:id])
+    @game = Game.find(params[:id])
     if @game.update(game_params)
       redirect_to mypage_path(current_end_user), notice: '更新しました。'
     else
@@ -52,12 +52,10 @@ class Public::GamesController < ApplicationController
     @games = Game.search(params[:keyword]).page(params[:page]).per(6)
   end
 
-
   private
 
   def game_params
     params.require(:game).permit(:title, :introduction, :category, :star)
   end
-
 
 end

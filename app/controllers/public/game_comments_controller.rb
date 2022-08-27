@@ -9,7 +9,7 @@ class Public::GameCommentsController < ApplicationController
     else
       @game=Game.find(params[:game_id])
       @game_comment = game_comment
-      @game_comments = @game.game_comments.page(params[:page]).per(4)
+      @game_comments = @game.game_comments.page(params[:page]).per(5)
       render 'public/games/show'
     end
   end
@@ -20,6 +20,7 @@ class Public::GameCommentsController < ApplicationController
   end
 
   private
+
   def game_comment_params
     params.require(:game_comment).permit(:comment)
   end

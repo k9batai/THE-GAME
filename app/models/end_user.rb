@@ -15,6 +15,6 @@ class EndUser < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲストユーザー"
     end
-
   end
+  
 end
