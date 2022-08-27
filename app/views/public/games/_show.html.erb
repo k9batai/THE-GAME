@@ -17,17 +17,19 @@
       <td><%= game.title %></td>
       <td><%= game.category %></td>
       <td><%= game.end_user.name %></td>
-      <td><span id="star-rate<%= game.id %>"></span>
-      <script>
-      $('#star-rate<%= game.id%>').raty({
-        size      : 36,
-        starOff   : '<%= asset_path('star-off.png') %>',
-        starOn    : '<%= asset_path('star-on.png') %>',
-        half      : false,
-        readOnly: true,
-        score: <%= game.star %>,
-      });
-    </script></td>
+      <td>
+        <span id="star-rate<%= game.id %>"></span>
+        <script>
+          $('#star-rate<%= game.id%>').raty({
+            size      : 36,
+            starOff   : '<%= asset_path('star-off.png') %>',
+            starOn    : '<%= asset_path('star-on.png') %>',
+            half      : false,
+            readOnly: true,
+            score: <%= game.star %>,
+          });
+          </script>
+      </td>
       <td><%= @game.introduction %></td>
     </tr>
   </tbody>

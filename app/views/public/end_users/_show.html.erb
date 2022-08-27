@@ -1,9 +1,9 @@
 <div class='col-md-9 mt-5'>
-  
+
 <h2>MyGames</h2>
 
   <table class="table table-hover mt-5">
-    
+
     <thead class="thead-light">
       <tr>
         <th>ゲーム名</th>
@@ -15,7 +15,7 @@
         <th></th>
       </tr>
     </thead>
-    
+
     <tbody>
     <% game.each do |game| %>
       <tr>
@@ -24,12 +24,12 @@
         <td><span id="star-rate<%= game.id %>"></span>
         <script>
           $('#star-rate<%= game.id%>').raty({
-          size      : 36,
-          starOff   : '<%= asset_path('star-off.png') %>',
-          starOn    : '<%= asset_path('star-on.png') %>',
-          half      : false,
-          readOnly: true,
-          score: <%= game.star %>,
+            size      : 36,
+            starOff   : '<%= asset_path('star-off.png') %>',
+            starOn    : '<%= asset_path('star-on.png') %>',
+            half      : false,
+            readOnly: true,
+            score: <%= game.star %>,
           });
         </script>
         </td>
@@ -42,8 +42,8 @@
       </tr>
     <% end %>
     </tbody>
-    
+
   </table>
-  
+
   <%= paginate game %>
 </div>
