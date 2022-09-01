@@ -11,7 +11,18 @@ RSpec.describe 'Gameモデルのテスト', type: :model do
         game.title = ''
         is_expected.to eq false
       end
-      it 'introductionカラム' do
+      it '20文字以下であること: 20文字はOK' do
+        game.title = Faker::Lorem.characters(number: 20)
+        is_expected.to eq true
+      end
+      it '20文字以下であること: 21文字はNG' do
+        game.title = Faker::Lorem.characters(number: 21)
+        is_expected.to eq false
+      end
+    end
+
+    context 'bodyカラム' do
+      it '空腹でないこと' do
         game.introduction = ''
         is_expected.to eq false
       end
