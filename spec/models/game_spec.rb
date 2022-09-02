@@ -42,5 +42,12 @@ RSpec.describe 'Gameモデルのテスト', type: :model do
         is_expected.to eq false
       end
     end
+
+    context 'starカラム' do
+      it '空欄でないこと' do
+        game.star = ''
+        is_expected.to eq false
+      end
+    end
   end
 end
